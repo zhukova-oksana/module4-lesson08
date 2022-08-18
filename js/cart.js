@@ -17,6 +17,7 @@ const cart = {
     this.items.push(product);
 
     this.totalPrice = 0;
+    this.count = 0;
 
     this.items.forEach((item) => {
       this.count = this.increaseCount(item.amount);
@@ -37,6 +38,7 @@ const cart = {
   print () {
     console.log(JSON.stringify(this.items));
     console.log('Общая стоимость:', this.getTotalPrice());
+    // console.log('Количество товаров:', this.count);
   },
 }
 
