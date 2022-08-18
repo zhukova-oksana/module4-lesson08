@@ -14,14 +14,12 @@ const cart = {
       amount: amountProduct,
     }
 
-    this.items = [product];
+    this.items.push(product);
 
-    // console.log(this.items);
+    this.totalPrice = 0;
 
     this.items.forEach((item) => {
-      // console.log(item);
       this.count = this.increaseCount(item.amount);
-      // console.log(this.count);
       this.calculateItemPrice(item.amount, item.price);
     });
   },
@@ -42,7 +40,7 @@ const cart = {
   },
 }
 
-cart.add('стул', 100, 1);
+cart.add('стул', 400, 1);
 cart.add('стол', 500);
 cart.add('лампа', 200, 6);
 
