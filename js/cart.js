@@ -16,12 +16,12 @@ const cart = {
 
     this.items = [product];
 
-    console.log(this.items);
+    // console.log(this.items);
 
     this.items.forEach((item) => {
       // console.log(item);
       this.count = this.increaseCount(item.amount);
-      console.log(this.count);
+      // console.log(this.count);
       this.calculateItemPrice(item.amount, item.price);
     });
   },
