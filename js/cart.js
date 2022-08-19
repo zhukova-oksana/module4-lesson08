@@ -15,20 +15,17 @@ const cart = {
     }
 
     this.items.push(product);
-
-    this.totalPrice = 0;
-    this.count = 0;
-
-    this.items.forEach((item) => {
-      this.count = this.increaseCount(item.amount);
-      this.calculateItemPrice(item.amount, item.price);
-    });
+    this.increaseCount(product.amount);
+    this.calculateItemPrice();
   },
   increaseCount (num) {
     return this.count += num;
   },
-  calculateItemPrice (item, price) {
-    return this.totalPrice += item * price;
+  calculateItemPrice () {
+    this.totalPrice = 0;
+    this.items.forEach((item) => {
+      return this.totalPrice += item.amount * item.price;
+    });
   },
   clear () {
     this.items = [];
@@ -38,7 +35,7 @@ const cart = {
   print () {
     console.log(JSON.stringify(this.items));
     console.log('Общая стоимость:', this.getTotalPrice());
-    // console.log('Количество товаров:', this.count);
+    console.log('Количество товаров:', this.count);
   },
 }
 
