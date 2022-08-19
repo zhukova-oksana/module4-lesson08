@@ -24,8 +24,9 @@ const cart = {
   calculateItemPrice () {
     this.totalPrice = 0;
     this.items.forEach((item) => {
-      return this.totalPrice += item.amount * item.price;
+      this.totalPrice += item.amount * item.price;
     });
+    return this.totalPrice;
   },
   clear () {
     this.items = [];
