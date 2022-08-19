@@ -35,7 +35,6 @@ const cart = {
   print () {
     console.log(JSON.stringify(this.items));
     console.log('Общая стоимость:', this.getTotalPrice());
-    console.log('Количество товаров:', this.count);
   },
 }
 
